@@ -1,0 +1,2 @@
+module UserFeelingsHelper
+end
