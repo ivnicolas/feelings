@@ -1,13 +1,17 @@
-<h1> You have hit the new users page <h1>
-<%= form_with model: @user, local: true do |f| %>
+<h1> Sign Up Below <h1>
+ <h3>
+ <%= form_with model: @user, url: "/signup" ,local: true do |f| %>
 
     <%= f.label :name, "Enter Your Name" %>
     <%= f.text_field :name , placeholder: "Name Here" %>
-
+    <br>
     <%= f.label :email, "Enter Your Email" %>
-    <%= f.text_field :email , placeholder: "Register with Email" %>
-
+    <%= f.email_field :email , placeholder: "Register with Email" %>
+    <br>
     <%= f.label :password, "Please Enter a Password " %>
     <%= f.password_field :password %>
+    
     <%= f.submit "Submit" %>
-<% end %>
+<% end %> 
+
+</h3>

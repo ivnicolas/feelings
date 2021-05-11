@@ -1,10 +1,8 @@
-<h1> You have hit the user's Home page </h1>
 
-
-
-<h3> Hello insert_user_name ! Its time to check-in with yourself</h3>
+<h3> Hello <%= @user.name %>! Its time to check-in with yourself</h3>
 <h4> You wee recently feeling : insert the name for the last feeling they logged <h4>
 
+<% if @user.include?(:mantra)
 <!--render fancy script to put user mantra -->
 <h2>Remember...</h2>
 <h3> Include User mantra </h3>
@@ -18,4 +16,4 @@
 
 
 <h5>links</h5>
-<h6> Logout/Recent Feelings/Feelings Dictionary/How's Everyone Doing/ Trends and Patterns<h6>
+<h5> <%=link_to "Logout", logout_path, method: "delete" %> /Recent Feelings/Feelings Dictionary/How's Everyone Doing/ Trends and Patterns<h5>
