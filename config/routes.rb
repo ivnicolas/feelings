@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   post '/signup' , to: "users#create"
   get '/homepage' , to: "users#homepage"
   delete '/logout', to: "sessions#destroy"
+  get '/forecast' to: "feelings#forecast"
+  get 'users/:id/trend' to: "user#trends"
     
   resources :sessions, only:[:new , :create, :destroy]
   resources :users, only:[:show, :new, :create , :edit, :destroy , :update ] do
-    resources :user_feelings, only:[:index, :show, :new, :create, :edit, :update ]
+    resources :user_feelings, only:[:index, :show, :new, :create ]
   end 
   resources :feelings, only:[:show, :index]
 

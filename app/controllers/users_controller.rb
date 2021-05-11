@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+
+    def homepage
+        @user = User.find_by_id(session[:user_id])
+        redirect_to '/' if  !@user
+    end 
+
+
     def new 
         @user = User.new
     end 
@@ -14,13 +21,21 @@ class UsersController < ApplicationController
         end 
     end 
 
-    def homepage
-        @user = User.find_by_id(session[:user_id])
-        redirect_to '/' if  !@user
+    def edit
+    end 
+
+    def update 
     end 
 
     def show 
     end 
+
+    def trend 
+    end 
+
+    def destory 
+    end 
+
 
     private 
 
