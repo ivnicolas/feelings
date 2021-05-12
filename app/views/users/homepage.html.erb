@@ -1,22 +1,21 @@
-# <!--Header for Edit Profile/Feelings Log/Feelings Dictionary/How's Everyone Doing/ Trends and Patterns -->
 
-<h2> dd <h2>
+<h2> Hello <%= @user.name %>! Its time to check-in with yourself</h2>
 
-<h3> Hello <%= @user.name %>! Its time to check-in with yourself</h3>
-<h4> You wee recently feeling : insert the name for the last feeling they logged <h4>
+    <h4><%= flash[:message] if !!flash[:message] %></h4>
+    <div>
+    <% if  @user.goal != nil %>
+    <h4>Your Goal For Being Here: <%= @user.goal %> </h4>
+    
+    <% end %>
+    <% if !@user.feelings.empty? %>
+        <h4> You were Recently Feeling: <%= @user.feelings.last.name %></h4>
+    <% end %>
+    <% if  @user.mantra != nil%>
+        <h4>Remember, <%= @user.mantra %> </h4>
+    <% end %>
+ 
+    </div>
 
-<% if @user.include?(:mantra)
-<!--render fancy script to put user mantra -->
-<h2>Remember...</h2>
-<h3> Include User mantra </h3>
-
-<h2>You are here because ... <h2>
-<h3> Include User goal </h3>
+<h3> <%= link_to "Begin Check-In", new_user_user_feeling_path(@user) %></h3>
 
 
-<lets begin>
-<h4> button to log in feeling (new_user_feeling)<h4>
-
-
-<h5>links</h5>
-<h5> <%=link_to "Logout", logout_path, method: "delete" %> <h5>

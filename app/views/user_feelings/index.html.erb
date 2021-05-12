@@ -1,1 +1,10 @@
-<h1> You are at the User Feelings *Index* Page </h1>
+<h1> A History of Your Feelings  </h1>
+
+<% @user.user_feelings.each do |f| %>
+    <%= f.created_at.strftime('%A %b %e, %Y %l:%M %p') %>
+    <br>
+    Your Were Feeling: <%= link_to f.feeling.name, feeling_path(f.feeling_id) %> 
+    <br>
+    <%= link_to "More Details" , user_user_feeling_path(@user , f.id) %>
+    <br><br>
+<% end %>

@@ -1,1 +1,6 @@
-<h1> You are at the Feelings *Index* Page </h1>
+<h1> Click On a Feeling to Learn More! </h1>
+
+<% @feelings.each do |f| %> 
+    <%= link_to f.name , feeling_path(f.id) %>
+    <br><br>
+    <% end %>

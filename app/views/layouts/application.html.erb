@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <div>
+    <% if logged_in? %>
+
+      <%=link_to "Homepage", homepage_path %> |
+      <%=link_to "Edit Profile", edit_user_path(current_user) %> |
+      <%=link_to "Feelings Log", user_user_feelings_path(current_user) %> |
+      <%=link_to "Feelings Dictionary", feelings_path %> |
+      <%=link_to "How's Everybody Doing", forecast_path %> |
+      <%=link_to "Your Trends and Patterns", '/users/:user_id/trends' %> |
+      <%=link_to "Logout", logout_path, method: "delete" %> |
+    <% else %>
+      <%= link_to "Sign Up Here" , signup_path %>
+    <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -1,1 +1,36 @@
-<h1> You are at the User Feelings **Show** Page </h1>
+
+<h2> Feelings Log for <%=@user.name%> Created On: <%= @user_feeling.created_at.strftime('%A %b %e, %Y %l:%M %p') %></h2>
+
+<br>
+You Were Feeling : <%= @user_feeling.feeling.name %>
+<br>
+Did You Drink Water : <%= @user_feeling.drink_water %>
+<br>
+You Drank <%= @user_feeling.water_intake %> cups of water 
+<br>
+You Last Ate at: <%= @user_feeling.time_of_last_meal.strftime('%l:%M %p') %>
+<br>
+What You Ate: <%= @user_feeling.what_did_you_eat %>
+<br>
+Did You Have a Moment of Quiet: <%= @user_feeling.moment_of_quiet %>
+<br>
+You Had <%= @user_feeling.length_of_quiet %> hours of quiet 
+<br>
+Did You Get Fresh Air: <%= @user_feeling.fresh_air %>
+<br>
+You Spent <%= @user_feeling.time_online %> online. 
+<br>
+Were You Able to Talk to Others? <%= @user_feeling.social_interaction %>
+<br>
+For How Long? <%= @user_feeling.interaction_duration %> hours 
+<br>
+With How Many People? <%= @user_feeling.interaction_count %> people 
+<br>
+Have You Moved Your Body Recently? <%= @user_feeling.body_movement %>
+<br>
+What Type of Body Movement? <%= @user_feeling.body_movement_type %>
+<br>
+Did You Experience Conflict Today? <%= @user_feeling.conflict %>
+<br>
+Did You Resolve the Conflict ? <%= @user_feeling.resolved_conflict %>
+<br>

@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
-
-
-    def homepage
-        @user = User.find_by_id(session[:user_id])
-        redirect_to '/' if  !@user
-    end 
-
-
+    # skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
+    
+ 
     def new 
         @user = User.new
     end 
@@ -21,25 +16,60 @@ class UsersController < ApplicationController
         end 
     end 
 
+    def trends 
+        redirect_if_not_logged_in
+    end 
+
+    #the users#show page but renamed homepage
+    def homepage
+        redirect_if_not_logged_in
+        @user = User.find_by_id(session[:user_id])
+        redirect_to '/' if  !@user
+
+        if @user.goal == nil && @user.mantra == nil 
+            @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra and Goal."
+        elsif @user.goal == nil
+            @message= flash[:message]= "Please Edit Your Profile to Include Your Goal."
+        elsif @user.mantra == nil 
+            @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra."
+        end
+       
+     
+        # redirect_to '/' if  !@user
+    end 
+
+
+
+
     def edit
+        redirect_if_not_logged_in
+        
+        @user= User.find_by_id(params[:id])
     end 
 
     def update 
+        @user= User.find_by_id(params[:id])
+        @user.update(user_params)
+
+        if @user.update(user_params)
+        
+            redirect_to homepage_path
+        else 
+            render :edit 
+        end 
     end 
 
-    def show 
-    end 
 
-    def trend 
-    end 
+   
 
     def destory 
+    
     end 
 
 
     private 
 
     def user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email, :password, :age, :zipcode, :mantra, :goal)
     end 
 end

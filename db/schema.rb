@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_09_171412) do
+ActiveRecord::Schema.define(version: 2021_05_11_220807) do
 
   create_table "feelings", force: :cascade do |t|
     t.string "name"
@@ -28,11 +28,9 @@ ActiveRecord::Schema.define(version: 2021_05_09_171412) do
     t.text "what_did_you_eat"
     t.boolean "moment_of_quiet"
     t.integer "length_of_quiet"
-    t.boolean "freash_air"
+    t.boolean "fresh_air"
     t.integer "time_online"
-    t.boolean "social_interation"
-    t.boolean "online_interation"
-    t.boolean "in_person_interaction"
+    t.boolean "social_interaction"
     t.integer "interaction_duration"
     t.integer "interaction_count"
     t.boolean "body_movement"
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_05_09_171412) do
     t.boolean "resolved_conflict"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "interaction_type"
   end
 
   create_table "users", force: :cascade do |t|

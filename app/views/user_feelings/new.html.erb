@@ -1,1 +1,42 @@
-<h1> You are at the User Feelings *New* Page </h1>
+<h1> New Feeling Log for <%= @user.name %> </h1>
+
+<%= form_with model: [@user, @user_feeling] do |f| %>
+
+    How Are You Feeling Today? <%= f.collection_select :feeling_id, Feeling.all, :id, :name %>
+    <br>
+    Did You Drink Water Today?: <%= f.radio_button :drink_water, true %> Y 
+    <%= f.radio_button :drink_water, false %> N  || How How Many Cups of Water Have You Drank Today? <%= f.number_field :water_intake%>
+    <br>
+    When Was You Last Meal?<%= f.time_field :time_of_last_meal %> || What Did You Eat?  <%= f.text_field :what_did_you_eat %>
+    <br>
+    Have You Had a Moment of Quiet? <%= f.radio_button :moment_of_quiet, true %> Y 
+    <%= f.radio_button :moment_of_quiet, false %> N  || For How Long? (in hours)<%= f.number_field :length_of_quiet%>
+    <br>
+    Have You Gotten Fresh Air? <%= f.radio_button :fresh_air, true %> Y 
+    <%= f.radio_button :fresh_air, false %> N
+    <br>
+    How Many Hours Have You Spent Online Today? <%= f.number_field :time_online%>
+    <br>
+    Have You Had Any Social Interaction Today? <%= f.radio_button :social_interaction, true %> Y 
+    <%= f.radio_button :social_interaction, false %> N|| What Kind (check all that apply)?
+    <br>
+    Length Of Social Interaction (in hours) <%= f.number_field :interaction_duration%>
+    <br>
+    How Many People Did You Interact With?<%= f.number_field :interaction_count%>
+    <br>
+    Have You Moved Your Body Today? <%= f.radio_button :body_movement, true %> Y 
+    <%= f.radio_button :body_movement, false %> N
+    <br>
+    What Type of Movement Did You Do?
+    <br>
+    Have You Experienced Conflict Today? <%= f.radio_button :conflict, true %> Y 
+    <%= f.radio_button :conflict , false %> N || Was the Conflict Resolved? <%= f.radio_button :resolved_conflict, true %> Y 
+    <%= f.radio_button :resolved_conflict , false %> N
+
+    
+    <br>
+
+    <%= f.submit "Submit" %>
+ <% end %>
+
+   
