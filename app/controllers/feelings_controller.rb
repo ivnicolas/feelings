@@ -7,7 +7,4 @@ class FeelingsController < ApplicationController
         @feeling = Feeling.find_by_id(params[:id])
     end 
 
-    def forecast 
-    end 
-    
 end

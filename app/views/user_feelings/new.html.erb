@@ -1,5 +1,6 @@
 <h1> New Feeling Log for <%= @user.name %> </h1>
 
+<%= @message %>
 <%= form_with model: [@user, @user_feeling] do |f| %>
 
     How Are You Feeling Today? <%= f.collection_select :feeling_id, Feeling.all, :id, :name %>
@@ -32,8 +33,6 @@
     Have You Experienced Conflict Today? <%= f.radio_button :conflict, true %> Y 
     <%= f.radio_button :conflict , false %> N || Was the Conflict Resolved? <%= f.radio_button :resolved_conflict, true %> Y 
     <%= f.radio_button :resolved_conflict , false %> N
-
-    
     <br>
 
     <%= f.submit "Submit" %>

@@ -1,7 +1,7 @@
 <h1> A History of Your Feelings  </h1>
 
 <% @user.user_feelings.each do |f| %>
-    <%= f.created_at.strftime('%A %b %e, %Y %l:%M %p') %>
+    <%= f.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A %b %e, %Y %l:%M %p') %>
     <br>
     Your Were Feeling: <%= link_to f.feeling.name, feeling_path(f.feeling_id) %> 
     <br>

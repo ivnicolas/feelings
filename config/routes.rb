@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   root 'sessions#welcome'
 
+  get '/auth/:provider/callback', to: 'sessions#omniauth'
+
   post '/' , to: "sessions#create"
   get '/signup' , to: "users#new"
   post '/signup' , to: "users#create"
   get '/homepage' , to: "users#homepage"
   delete '/logout', to: "sessions#destroy"
-  get '/forecast', to: "feelings#forecast"
+  get '/forecast', to: "user_feelings#forecast"
   get '/users/:user_id/trends',to: "users#trends"
     
   resources :sessions, only:[:new , :create, :destroy]

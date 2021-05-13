@@ -4,6 +4,18 @@ class SessionsController < ApplicationController
   def welcome 
   end 
 
+  def omniauth #login user with omniauth
+    #note to self for review: if google chrome already has you logged in, it will automatically use
+    #that information rather than have you pick a profile to sign in with
+    user = User.build_from_omniauth(auth)
+    if user.valid?
+      session[:user_id] = user[:id]
+      redirect_to homepage_path
+    else 
+      redirect_to 
+    end
+  end 
+
   def create
     # binding.pry
     user = User.find_by(email: params[:user][:email])
@@ -16,8 +28,16 @@ class SessionsController < ApplicationController
     end 
   end
 
+
   def destroy
     session.clear
     redirect_to root_path
   end
+
+
+  private 
+
+  def auth 
+    request.env['omniauth.auth']
+  end 
 end

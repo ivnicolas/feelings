@@ -1,18 +1,21 @@
 class UserFeelingsController < ApplicationController
-    def new
-        # binding.pry
 
+    def forecast 
+        @forcasted_feeling = UserFeeling.tf_feeling
+        @forecasted_count = UserFeeling.tf_count
+    end 
+
+
+    def new
         if params[:user_id]
             find_user
             @user_feeling = @user.user_feelings.build
         else 
         redirect_to '/' 
         end 
-
     end 
 
     def create 
-
         if params[:user_id]
             find_user
             @user_feeling = @user.user_feelings.build(user_feelings_params) 
@@ -28,6 +31,7 @@ class UserFeelingsController < ApplicationController
                 redirect_if_not_logged_in
             end 
         else
+            @message= @user_feeling.errors.full_messages
             render :new
         end 
 
@@ -41,7 +45,6 @@ class UserFeelingsController < ApplicationController
         if params[:user_id] 
             find_user
             @user_feeling = UserFeeling.find_by_id(params[:id])
-         
          end
     end 
 

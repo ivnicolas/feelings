@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     #this gives access to helper methods in the views
-    helper_method :current_user , :logged_in?
+    helper_method :current_user , :logged_in?, :bool_to_text
 
     private 
 
@@ -19,5 +19,13 @@ class ApplicationController < ActionController::Base
 
     def redirect_if_not_current_user 
        
+    end 
+
+    def bool_to_text(value)
+        if value == true 
+            "Yes"
+        else 
+            "No"
+        end 
     end 
 end

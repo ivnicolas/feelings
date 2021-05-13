@@ -26,11 +26,12 @@ class UsersController < ApplicationController
         @user = User.find_by_id(session[:user_id])
         redirect_to '/' if  !@user
 
-        if @user.goal == nil && @user.mantra == nil 
+        if (@user.goal.blank?) && (@user.mantra.blank?)
             @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra and Goal."
-        elsif @user.goal == nil
+        elsif (@user.goal.blank? )
             @message= flash[:message]= "Please Edit Your Profile to Include Your Goal."
-        elsif @user.mantra == nil 
+        elsif (@user.mantra.blank?)
+ 
             @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra."
         end
        

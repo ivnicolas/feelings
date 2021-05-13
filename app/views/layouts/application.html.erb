@@ -21,10 +21,14 @@
       <%=link_to "How's Everybody Doing", forecast_path %> |
       <%=link_to "Your Trends and Patterns", '/users/:user_id/trends' %> |
       <%=link_to "Logout", logout_path, method: "delete" %> |
-    <% else %>
-      <%= link_to "Sign Up Here" , signup_path %>
     <% end %>
     </div>
     <%= yield %>
+    <% if !logged_in? %>
+    <%= button_to "Log In With Google", '/auth/google_oauth2' %>
+    <br> <br>
+    <%= link_to "Sign Up Here" , signup_path %>
+  
+    <% end %>
   </body>
 </html>

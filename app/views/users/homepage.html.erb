@@ -3,14 +3,16 @@
 
     <h4><%= flash[:message] if !!flash[:message] %></h4>
     <div>
-    <% if  @user.goal != nil %>
+    <% if  (!@user.goal.blank?) %>
     <h4>Your Goal For Being Here: <%= @user.goal %> </h4>
-    
     <% end %>
-    <% if !@user.feelings.empty? %>
+
+
+    <% if !@user.feelings.empty? %> 
         <h4> You were Recently Feeling: <%= @user.feelings.last.name %></h4>
     <% end %>
-    <% if  @user.mantra != nil%>
+
+    <% if  (!@user.mantra.blank?)%>
         <h4>Remember, <%= @user.mantra %> </h4>
     <% end %>
  
