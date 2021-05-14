@@ -1,29 +1,8 @@
 <h1> Edit Your Profile Below  </h1>
 
+<% if @user.errors.any?  %>
+    <p><%= @user.errors.full_messages.to_sentence %></p>   
+<% end %>
+
 <h3>
-<%= form_with model: @user ,local: true do |f| %>
-
-   <%= f.label :name, "Name" %>
-   <%= f.text_field :name , placeholder: "Name Here" %>
-   <br>
-   <%= f.label :email, "Email" %>
-   <%= f.email_field :email , placeholder: "Register with Email" %>
-   <br>
-   <%= f.label :age, "Age" %>
-   <%= f.number_field :age %>
-   <br>
-   <%= f.label :zipcode, "Zipcode" %>
-   <%= f.number_field :zipcode %>
-   <br>
-   <%= f.label :goal, "What Do You Hope To Achieve By Using this Application?" %>
-   <br>
-   <%= f.text_area :goal %>
-   <br>
-   <%= f.label :mantra, "What is Your Mantra?" %>
-   <br>
-   <%= f.text_area :mantra %>
-
-
-   
-   <%= f.submit "Submit" %>
-<% end %> 
+<%= render 'form' %>

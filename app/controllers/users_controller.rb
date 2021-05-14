@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     # skip_before_action :redirect_if_not_logged_in, only: [:new, :create]
-    
+
  
     def new 
         @user = User.new
@@ -27,18 +27,6 @@ class UsersController < ApplicationController
         redirect_if_not_logged_in
         @user = User.find_by_id(session[:user_id])
         redirect_to '/' if  !@user
-
-        if (@user.goal.blank?) && (@user.mantra.blank?)
-            @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra and Goal."
-        elsif (@user.goal.blank? )
-            @message= flash[:message]= "Please Edit Your Profile to Include Your Goal."
-        elsif (@user.mantra.blank?)
- 
-            @message= flash[:message]= "Please Edit Your Profile to Include Your Mantra."
-        end
-       
-     
-        # redirect_to '/' if  !@user
     end 
 
 
@@ -75,4 +63,5 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:name, :email, :password, :age, :zipcode, :mantra, :goal)
     end 
+
 end

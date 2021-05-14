@@ -1,17 +1,9 @@
 <h1> Sign Up Below <h1>
- <h3>
- <%= form_for  @user do |f| %>
 
-    <%= f.label :name, "Enter Your Name" %>
-    <%= f.text_field :name , placeholder: "Name Here" %>
-    <br>
-    <%= f.label :email, "Enter Your Email" %>
-    <%= f.email_field :email , placeholder: "Register with Email" %>
-    <br>
-    <%= f.label :password, "Please Enter a Password " %>
-    <%= f.password_field :password %>
-    
-    <%= f.submit "Submit" %>
-<% end %> 
+<% if @user.errors.any?  %>
+    <h4><%= @user.errors.full_messages.to_sentence %></h4>   
+<% end %>
+ <h3>
+ <%= render 'form' %>
 
 </h3>

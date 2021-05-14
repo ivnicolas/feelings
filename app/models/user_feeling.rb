@@ -2,8 +2,10 @@ class UserFeeling < ActiveRecord::Base
     belongs_to :user 
     belongs_to :feeling
 
-    validates :user_id, :feeling_id, :drink_water, :time_of_last_meal, :what_did_you_eat, :moment_of_quiet, 
-    :fresh_air, :time_online, :social_interaction, :body_movement, :conflict , presence: true 
+    # validates :user_id, :feeling_id, :drink_water, presence: true 
+    validates :user_id, :feeling_id, :time_of_last_meal, :what_did_you_eat, :time_online , presence: true 
+     validates_inclusion_of  :drink_water, :moment_of_quiet,  :fresh_air, :social_interaction, :body_movement,
+     :conflict, in: [true, false]
 
 
     scope :todays_forecast, -> {where(created_at: Time.now.midnight..(Time.now.midnight + 1.day )).group(:feeling_id).count.max}

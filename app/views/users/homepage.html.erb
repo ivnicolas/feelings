@@ -1,22 +1,20 @@
 
-<h2> Hello <%= @user.name %>! Its time to check-in with yourself</h2>
+<h2> Hello <%= first_name(@user.name) %>! Its time to check-in with yourself</h2>
 
-    <h4><%= flash[:message] if !!flash[:message] %></h4>
     <div>
-    <% if  (!@user.goal.blank?) %>
-    <h4>Your Goal For Being Here: <%= @user.goal %> </h4>
-    <% end %>
+
+    <h4>Your Goal For Being Here: <%= @user.goal %>. </h4> 
+  
 
 
     <% if !@user.feelings.empty? %> 
         <h4> You were Recently Feeling: <%= @user.feelings.last.name %></h4>
     <% end %>
 
-    <% if  (!@user.mantra.blank?)%>
-        <h4>Remember, <%= @user.mantra %> </h4>
-    <% end %>
- 
+    <h4>Remember, <%= @user.mantra.downcase %>. </h4>
+  
     </div>
+
 
 <h3> <%= link_to "Begin Check-In", new_user_user_feeling_path(@user) %></h3>
 

@@ -1,36 +1,51 @@
 
-<h2> Feelings Log for <%=@user.name%> Created On: <%= @user_feeling.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A %b %e, %Y %l:%M %p') %></h2>
+<h2> Feelings Log for <%=first_name(@user.name) %>.  Created On: <%= @user_feeling.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A %b %e, %Y %l:%M %p') %></h2>
 
 <br>
 You Were Feeling : <%= @user_feeling.feeling.name %>
 <br>
-Did You Drink Water : <%= @user_feeling.drink_water %>
+Did You Drink Water : <%= bool_to_text(@user_feeling.drink_water) %>
 <br>
-You Drank <%= @user_feeling.water_intake %> cups of water 
-<br>
+<% if !@user_feeling.water_intake.blank?%>
+    You Drank <%= @user_feeling.water_intake %> cups of water 
+    <br>
+<% end %>
+
 You Last Ate at: <%= @user_feeling.time_of_last_meal.in_time_zone('Eastern Time (US & Canada)').strftime('%l:%M %p') %>
 <br>
 What You Ate: <%= @user_feeling.what_did_you_eat %>
 <br>
 Did You Have a Moment of Quiet: <%= bool_to_text(@user_feeling.moment_of_quiet) %>
 <br>
+<% if !@user_feeling.length_of_quiet.blank? %>
 You Had <%= @user_feeling.length_of_quiet %> hours of quiet 
 <br>
-Did You Get Fresh Air: <%= @user_feeling.fresh_air %>
+<% end %>
+
+Did You Get Fresh Air: <%= bool_to_text(@user_feeling.fresh_air) %>
 <br>
 You Spent <%= @user_feeling.time_online %> online. 
 <br>
-Were You Able to Talk to Others? <%= @user_feeling.social_interaction %>
+Were You Able to Talk to Others? <%= bool_to_text(@user_feeling.social_interaction)%>
 <br>
+<% if !@user_feeling.interaction_duration.blank? %>
 For How Long? <%= @user_feeling.interaction_duration %> hours 
 <br>
+<% end %>
+
+<% if !@user_feeling.interaction_count.blank? %>
 With How Many People? <%= @user_feeling.interaction_count %> people 
 <br>
-Have You Moved Your Body Recently? <%= @user_feeling.body_movement %>
+<% end %>
+Have You Moved Your Body Recently? <%= bool_to_text(@user_feeling.body_movement) %>
 <br>
+<% if !@user_feeling.body_movement_type.blank? %>
 What Type of Body Movement? <%= @user_feeling.body_movement_type %>
 <br>
-Did You Experience Conflict Today? <%= @user_feeling.conflict %>
+<% end %>
+Did You Experience Conflict Today? <%= bool_to_text(@user_feeling.conflict) %>
 <br>
-Did You Resolve the Conflict ? <%= @user_feeling.resolved_conflict %>
+<% if !@user_feeling.resolved_conflict.blank? %>
+Did You Resolve the Conflict ? <%= bool_to_text(@user_feeling.resolved_conflict) %>
 <br>
+<% end %>

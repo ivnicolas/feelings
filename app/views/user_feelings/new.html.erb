@@ -1,5 +1,10 @@
 <h1> New Feeling Log for <%= @user.name %> </h1>
 
+
+<% if @user_feeling.errors.any?  %>
+    <p><%= @user_feeling.errors.full_messages.to_sentence %></p>   
+<% end %>
+
 <%= form_with model: [@user, @user_feeling] , local: true do |f| %>
 
     How Are You Feeling Today? <%= f.collection_select :feeling_id, Feeling.all, :id, :name %>
@@ -18,7 +23,7 @@
     How Many Hours Have You Spent Online Today? <%= f.number_field :time_online%>
     <br>
     Have You Had Any Social Interaction Today? <%= f.radio_button :social_interaction, true %> Y 
-    <%= f.radio_button :social_interaction, false %> N|| What Kind (check all that apply)?
+    <%= f.radio_button :social_interaction, false %> N || What Kind (check all that apply)?
     <br>
     Length Of Social Interaction (in hours) <%= f.number_field :interaction_duration%>
     <br>

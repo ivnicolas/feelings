@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
 
   #is the same as sessions#new but on the welcompage
   def welcome 
+    if logged_in?
+      redirect_to homepage_path
+    end 
   end 
 
   def omniauth #login user with omniauth

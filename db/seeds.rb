@@ -29,7 +29,9 @@ zipcode=[20176, 21042, 80210, 11216, 80911, 14617, 03051, 01602, 04106, 66614,]
     email: Faker::Internet.unique.email ,
     age: rand(10..100),
     zipcode: zipcode.sample, 
-    password: "password"
+    password: "password",
+    goal: "To hold myself accountable to my wellness goals" ,
+    mantra: "What is meant for me will be" ,
     )
 
 end
@@ -72,10 +74,13 @@ UserFeeling.create(
     drink_water: true ,
     water_intake: 3 , 
     moment_of_quiet: false ,
-    freash_air: false , 
-    social_interation: true, 
+    fresh_air: false , 
+    social_interaction: true, 
     conflict: true , 
-    resolved_conflict: false 
+    body_movement: true,
+    resolved_conflict: false ,
+    time_of_last_meal: "2021-05-14 00:11:00.000000000 +0000", 
+    what_did_you_eat: "cookies"
     )
 
     puts "Stiff Where"

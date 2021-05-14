@@ -6,10 +6,13 @@ class UserFeelingsController < ApplicationController
     end 
 
     def index 
+
         find_user
+        check_user
     end 
 
     def show 
+        check_user
         if params[:user_id] 
             find_user
             @user_feeling = UserFeeling.find_by_id(params[:id])
@@ -17,6 +20,12 @@ class UserFeelingsController < ApplicationController
     end 
 
     def new
+        check_user
+        find_user
+        if @user.mantra.blank? || @user.goal.blank?
+          redirect_to homepage_path
+        end 
+        
         if params[:user_id]
             find_user
             @user_feeling = @user.user_feelings.build
@@ -40,7 +49,6 @@ class UserFeelingsController < ApplicationController
                 redirect_if_not_logged_in
             end 
         else
-            @message= @user_feeling.errors.full_messages
             render :new
         end 
 
@@ -55,6 +63,12 @@ class UserFeelingsController < ApplicationController
     def find_user
         @user = User.find_by_id(params[:user_id])
     end
+
+    def check_user 
+        if params[:user_id].to_i != session[:user_id]
+            render :no_permission
+        end 
+    end 
 
     def user_feelings_params 
         params.require(:user_feeling).permit( :id,:user_id, :feeling_id, :drink_water, :water_intake, 
