@@ -5,6 +5,7 @@ class UserFeeling < ActiveRecord::Base
     validates :user_id, :feeling_id, :drink_water, :time_of_last_meal, :what_did_you_eat, :moment_of_quiet, 
     :fresh_air, :time_online, :social_interaction, :body_movement, :conflict , presence: true 
 
+
     scope :todays_forecast, -> {where(created_at: Time.now.midnight..(Time.now.midnight + 1.day )).group(:feeling_id).count.max}
    
 

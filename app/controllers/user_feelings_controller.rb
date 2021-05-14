@@ -5,6 +5,16 @@ class UserFeelingsController < ApplicationController
         @forecasted_count = UserFeeling.tf_count
     end 
 
+    def index 
+        find_user
+    end 
+
+    def show 
+        if params[:user_id] 
+            find_user
+            @user_feeling = UserFeeling.find_by_id(params[:id])
+         end
+    end 
 
     def new
         if params[:user_id]
@@ -25,7 +35,6 @@ class UserFeelingsController < ApplicationController
 
         if @user_feeling.save 
             if @user 
-             
                 redirect_to user_user_feeling_path(@user, @user_feeling)
             else 
                 redirect_if_not_logged_in
@@ -37,16 +46,7 @@ class UserFeelingsController < ApplicationController
 
     end 
 
-    def index 
-        find_user
-    end 
 
-    def show 
-        if params[:user_id] 
-            find_user
-            @user_feeling = UserFeeling.find_by_id(params[:id])
-         end
-    end 
 
   
 

@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
     has_many :user_feelings
     has_many :feelings, through: :user_feelings
 
-    validates :email, presence: true   
-    validates :name, presence: true 
+    validates :email, :name, presence: true   
     validates :email, uniqueness: true
 
     
