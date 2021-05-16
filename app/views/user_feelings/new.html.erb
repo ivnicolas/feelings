@@ -15,7 +15,7 @@
     When Was You Last Meal?<%= f.time_field :time_of_last_meal %> || What Did You Eat?  <%= f.text_field :what_did_you_eat %>
     <br>
     Have You Had a Moment of Quiet? <%= f.radio_button :moment_of_quiet, true %> Y 
-    <%= f.radio_button :moment_of_quiet, false %> N  || For How Long? (in hours)<%= f.number_field :length_of_quiet%>
+    <%= f.radio_button :moment_of_quiet, false %> N 
     <br>
     Have You Gotten Fresh Air? <%= f.radio_button :fresh_air, true %> Y 
     <%= f.radio_button :fresh_air, false %> N
@@ -23,16 +23,10 @@
     How Many Hours Have You Spent Online Today? <%= f.number_field :time_online%>
     <br>
     Have You Had Any Social Interaction Today? <%= f.radio_button :social_interaction, true %> Y 
-    <%= f.radio_button :social_interaction, false %> N || What Kind (check all that apply)?
-    <br>
-    Length Of Social Interaction (in hours) <%= f.number_field :interaction_duration%>
-    <br>
-    How Many People Did You Interact With?<%= f.number_field :interaction_count%>
+    <%= f.radio_button :social_interaction, false %> N 
     <br>
     Have You Moved Your Body Today? <%= f.radio_button :body_movement, true %> Y 
     <%= f.radio_button :body_movement, false %> N
-    <br>
-    What Type of Movement Did You Do?
     <br>
     Have You Experienced Conflict Today? <%= f.radio_button :conflict, true %> Y 
     <%= f.radio_button :conflict , false %> N || Was the Conflict Resolved? <%= f.radio_button :resolved_conflict, true %> Y 

@@ -1,10 +1,13 @@
-<%= form_for @user do |f| %>
 
+ <%= form_for @user do |f| %>
+    <%= f.label :email, "Enter Your Email" %>
+    <%= f.email_field :email , placeholder: "Email" %>
+    <br>
+    <%= f.label :password, "Enter Your Password" %>
+    <%= f.password_field :password , placeholder: "Password" %>
+    <br>
     <%= f.label :name, "Name" %>
     <%= f.text_field :name , placeholder: "Name Here" %>
-    <br>
-    <%= f.label :email, "Email" %>
-    <%= f.email_field :email , placeholder: "Register with Email" %>
     <br>
     <%= f.label :age, "Age" %>
     <%= f.number_field :age %>
@@ -19,8 +22,6 @@
     <%= f.label :mantra, "What is Your Mantra?" %>
     <br>
     <%= f.text_area :mantra %>
- 
- 
     
     <%= f.submit "Submit" %>
- <% end %> 
+<% end %>

@@ -55,9 +55,6 @@ class UserFeelingsController < ApplicationController
     end 
 
 
-
-  
-
     private 
 
     def find_user

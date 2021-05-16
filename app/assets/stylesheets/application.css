@@ -14,3 +14,4 @@
  *= require_self
  */
  .field_with_errors { display: inline; }
+ .errors { color: crimson;}

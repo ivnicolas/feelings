@@ -29,9 +29,6 @@ class UsersController < ApplicationController
         redirect_to '/' if  !@user
     end 
 
-
-
-
     def edit
         redirect_if_not_logged_in
         
