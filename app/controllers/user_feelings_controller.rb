@@ -23,6 +23,7 @@ class UserFeelingsController < ApplicationController
         check_user
         find_user
         if @user.mantra.blank? || @user.goal.blank?
+            flash[:message]= "Please Edit Your Profile to Include Your Mantra AND Goal."
           redirect_to homepage_path
         end 
         

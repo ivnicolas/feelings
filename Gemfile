@@ -26,7 +26,6 @@ gem 'faker'
 gem 'omniauth'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-google-oauth2'
-gem 'groupdate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user[:id]
       redirect_to homepage_path
     else 
-      redirect_to 
+      binding.pry 
+      redirect_to root_path
     end
   end 
 

@@ -79,6 +79,7 @@ UserFeeling.create(
     conflict: true , 
     body_movement: true,
     resolved_conflict: false ,
+    time_online: 4,
     time_of_last_meal: "2021-05-14 00:11:00.000000000 +0000", 
     what_did_you_eat: "cookies"
     )
