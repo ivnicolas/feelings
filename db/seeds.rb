@@ -1,23 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 UserFeeling.destroy_all
 User.destroy_all
 Feeling.destroy_all
 
-# shade=["Full Sun","Partial Sun","Partial Shade","Full Shade"]
-# size=["Small","Medium","Large"]
-# water=["Once a week","Multiple Times a Weeks","As Needed"]
-# environment= ["Dry","Humid","Moderate"]
-# feelings= ["Aloe Vera","Yucca","Spider Plant","Peace Lily","English Ivy",
-# "Rubber Plant","Philodendron","Cactus","Snake Plant","Dieffenbachia","Fiddle Leaf Fig",
-# "Chinese Money Plant","African Violet"]
-# watered=[true,false]
-# list=["My Plants","Plants I Want","Plants for Friends"]
 
 zipcode=[20176, 21042, 80210, 11216, 80911, 14617, 03051, 01602, 04106, 66614,]
 

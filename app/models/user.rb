@@ -22,3 +22,13 @@ class User < ActiveRecord::Base
 
     end 
 end
+
+
+# dont code, pseudo code
+# challenge / task: create a button on feelings index that will sort feelings alphabetically by name
+
+# step 1 : create a link on the index page for sorting
+    # step 1a: define the route in routes file
+# step 2 : set up controller action to sort feelings ## the true challenge
+# step 3 : display feelings on view page
+

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/homepage' , to: "users#homepage"
   delete '/logout', to: "sessions#destroy"
   get '/forecast', to: "user_feelings#forecast"
+  get '/sorted-feelings', to: "feelings#sort"
 
     
   resources :sessions, only:[:new , :create, :destroy]
