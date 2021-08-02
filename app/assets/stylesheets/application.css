@@ -15,11 +15,25 @@
  */
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Tenor Sans', sans-serif;
+    /* font-family: 'Abel', sans-serif; */
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
+    color: #271317;
+    background-color: #efecea;
+}
+
+header{
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 50px;
+    /* text-align: center; */
+    /* background-color: #2a2c24; */
+    background-color: #d8dde0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #efecea;
+
 }
  .field_with_errors { display: inline; }
  .errors { color: crimson;}
