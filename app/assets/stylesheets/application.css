@@ -19,7 +19,7 @@ body {
     /* font-family: 'Abel', sans-serif; */
     font-size: 14px;
     line-height: 1.42857143;
-    color: #271317;
+    color: #3b0d11;
     background-color: #efecea;
 }
 
@@ -32,8 +32,13 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #efecea;
+    color: #fcfcfc;
 
+}
+
+.center{
+    align-items: center;
+    text-align: center;
 }
  .field_with_errors { display: inline; }
  .errors { color: crimson;}

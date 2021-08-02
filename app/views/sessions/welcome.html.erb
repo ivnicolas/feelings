@@ -1,22 +1,27 @@
 <header> The Feelings App. </header>
-<h4> Through this app we hope to give you the power to identify your emotions and uncover patterns that may play into why you feel the way that you do. </h4> 
+<h4 class="center">GIVING YOU THE POWER TO IDENTIFY YOUR EMOTIONS AND UNCOVER PATTERNS THAT SHAPE YOUR OVERALL WELLBEING</h4>
+
 <br>
-<h4> Please login of create and account to get started! </h4>
+
+<h4 class="center"> Please login or create an account to get started! </h4>
 
 <h4 class = "flash"><%= flash[:message] if !!flash[:message] %></h4>
 <br>
 
-<h4>
+<form class="center"> 
 <%= form_for :user do |f| %>
     <%= f.label :email, "Enter Your Email" %>
     <%= f.email_field :email , placeholder: "Email" %>
-    <br>
+    <br><br>
     <%= f.label :password, "Enter Your Password" %>
     <%= f.password_field :password , placeholder: "Password" %>
-    
+    <br>
     <%= f.submit "Submit" %>
+    <br>
+    <h4> OR </h4>
+    <%= button_to "Log In With Google", '/auth/google_oauth2' %>
 <% end %>
 <br>
-<%= button_to "Log In With Google", '/auth/google_oauth2' %>
-</h4>
+
+</form>
 
