@@ -1,5 +1,10 @@
-<h1> You are at the Feelings Forecast Page </h1>
+<%# <h1> You are at the Feelings Forecast Page </h1> %>
 
-Today's feeling is <%= @forcasted_feeling %>
-<br>
-<%= @forecasted_count %> people are feeling this way today 
+<h1 class= "center">Today's feeling is <%= @forcasted_feeling %><h1>
+<% if @forecasted_count === 0 %>
+<h3 class="center"> No feelings logged today </h3>
+<% elsif @forecasted_count === 1  %>
+<h3 class= "center" ><%= @forecasted_count %> person is feeling this way today</h3>
+<% else%>
+<h3 class= "center" ><%= @forecasted_count %> people are feeling this way today</h3>
+<%end%>

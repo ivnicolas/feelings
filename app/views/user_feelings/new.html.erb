@@ -1,19 +1,27 @@
-<h1> New Feeling Log for <%= @user.name %> </h1>
+<h1 class="center"> New Feeling Log for <%= @user.name %> </h1>
 
 
 <% if @user_feeling.errors.any?  %>
-    <p><%= @user_feeling.errors.full_messages.to_sentence %></p>   
+     <h4 class = "center errors"><%= @user_feeling.errors.full_messages.to_sentence %></h4>   
 <% end %>
 
-<form class="login"> 
+<div class="form">
+<div class="new-log"> 
 <%= form_with model: [@user, @user_feeling] , local: true do |f| %>
 
     How Are You Feeling Today? <%= f.collection_select :feeling_id, Feeling.all, :id, :name %>
     <br>
     Did You Drink Water Today?: Y <%= f.radio_button :drink_water, true %>   N  <%= f.radio_button :drink_water, false %> 
+    <br>
     How How Many Cups of Water Have You Drank Today? <%= f.number_field :water_intake%>
     <br>
-    When Was You Last Meal?<%= f.time_field :time_of_last_meal %> || What Did You Eat?  <%= f.text_field :what_did_you_eat %>
+    When Was You Last Meal?
+    <br>
+    <%= f.time_field :time_of_last_meal %> 
+    <br>
+    What Did You Eat? 
+    <br>
+     <%= f.text_field :what_did_you_eat %>
     <br>
     Have You Had a Moment of Quiet? <%= f.radio_button :moment_of_quiet, true %> Y 
     <%= f.radio_button :moment_of_quiet, false %> N 
@@ -30,16 +38,19 @@
     <%= f.radio_button :body_movement, false %> N
     <br>
     Have You Experienced Conflict Today? <%= f.radio_button :conflict, true %> Y 
-    <%= f.radio_button :conflict , false %> N || Was the Conflict Resolved? <%= f.radio_button :resolved_conflict, true %> Y 
+    <%= f.radio_button :conflict , false %> N 
+    <br>
+    Was the Conflict Resolved? <%= f.radio_button :resolved_conflict, true %> Y 
     <%= f.radio_button :resolved_conflict , false %> N
 
     
     <br>
 
-    <%= f.submit "Submit" %>
+    <%= f.submit "Submit" , class: 'input button-2'%>
  <% end %>
 
  <form>
+ </form>
 
 
 

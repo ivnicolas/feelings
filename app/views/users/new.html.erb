@@ -1,8 +1,9 @@
-<h1> Sign Up Below <h1>
+<h1 class="center"> Sign Up Below <h1>
 
 <% if @user.errors.any?  %>
-    <h4 class = "errors"><%= @user.errors.full_messages.to_sentence %></h4>   
+    <h4 class = "center errors"><%= @user.errors.full_messages.to_sentence %></h4>   
 <% end %>
+
  <h3>
     <%= render 'form' %>
 </h3>

@@ -61,6 +61,38 @@ margin-left: 35%;
 border-radius: 5px;
 background-color: #3D0B37;
 }
+.new-user {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    overflow: hidden;
+    background-color:  #d8dde0;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    /* margin-left: 33%; */
+    /* margin-right: %; */
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+}
+.new-log {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    overflow: hidden;
+    background-color:  #d8dde0;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    /* margin-left: 33%; */
+    /* margin-right: %; */
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+}
 
 .login {
 display: inline-block;
@@ -93,7 +125,10 @@ body {
     color: #3b0d11;
     background-color: #efecea;
 }
-
+textarea {
+    width: 400px;
+    height: 50px;
+  }
 header{
     font-family: 'Tenor Sans', sans-serif;
     font-size: 50px;

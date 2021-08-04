@@ -1,19 +1,20 @@
-
- <%= form_for @user do |f| %>
-    <%= f.label :email, "Enter Your Email" %>
+ <div class="form">
+<div class="new-user">
+ <%= form_for :user do |f| %>
+    <%= f.label :email, "Enter Your Email:" %>
     <%= f.email_field :email , placeholder: "Email" %>
     <br>
-    <%= f.label :password, "Enter Your Password" %>
+    <%= f.label :password, "Enter Your Password:" %>
     <%= f.password_field :password , placeholder: "Password" %>
     <br>
-    <%= f.label :name, "Name" %>
+    <%= f.label :name, "Name:" %>
     <%= f.text_field :name , placeholder: "Name Here" %>
     <br>
-    <%= f.label :age, "Age" %>
-    <%= f.number_field :age %>
+    <%= f.label :age, "Age:" %>
+    <%= f.number_field :age , placeholder: "Age" %>
     <br>
-    <%= f.label :zipcode, "Zipcode" %>
-    <%= f.number_field :zipcode %>
+    <%= f.label :zipcode, "Zipcode:" %>
+    <%= f.number_field :zipcode , placeholder: "Zipcode"%>
     <br>
     <%= f.label :goal, "What Do You Hope To Achieve By Using this Application?" %>
     <br>
@@ -22,6 +23,8 @@
     <%= f.label :mantra, "What is Your Mantra?" %>
     <br>
     <%= f.text_area :mantra %>
-    
-    <%= f.submit "Submit" %>
+    <br>
+    <%= f.submit "SUBMIT" , class: 'input button-2'%>
 <% end %>
+</div>
+</div>

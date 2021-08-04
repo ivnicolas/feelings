@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
       session[:user_id] = user[:id]
       redirect_to homepage_path
     else 
-      binding.pry 
       redirect_to root_path
     end
   end 
@@ -30,7 +29,6 @@ class SessionsController < ApplicationController
       redirect_to root_path
     end 
   end
-
 
   def destroy
     session.clear

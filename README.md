@@ -22,6 +22,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ivnico
 The project is available as open source under the terms of the [MIT License](http://www.opensource.org/licenses/mit-license).
 
 ## Future Features
+- Fix bug in edit
 - An explore page to explore the feelings of those around you. User can filter out how many people near by are feeling a certain way, haven’t moved their body, etc etc. But it would not show the specific users, just the count 
 - Timezone edit functionality 
 - Admin functionality to edit and update Feelings database 
