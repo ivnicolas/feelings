@@ -1,7 +1,8 @@
-<h2> Hello <%= first_name(@user.name) %>! Its time to check-in with yourself!</h2>
+
+
+<h1> Hello <%= first_name(@user.name) %>! Its time to check-in with yourself!</h2>
 
     <h4 class = "flash"><%= flash[:message] if !!flash[:message] %></h4>
-
     <div>
 
     <% if  (!@user.goal.blank?) %>

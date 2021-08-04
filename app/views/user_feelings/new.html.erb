@@ -5,12 +5,13 @@
     <p><%= @user_feeling.errors.full_messages.to_sentence %></p>   
 <% end %>
 
+<form class="login"> 
 <%= form_with model: [@user, @user_feeling] , local: true do |f| %>
 
     How Are You Feeling Today? <%= f.collection_select :feeling_id, Feeling.all, :id, :name %>
     <br>
-    Did You Drink Water Today?: <%= f.radio_button :drink_water, true %> Y 
-    <%= f.radio_button :drink_water, false %> N  || How How Many Cups of Water Have You Drank Today? <%= f.number_field :water_intake%>
+    Did You Drink Water Today?: Y <%= f.radio_button :drink_water, true %>   N  <%= f.radio_button :drink_water, false %> 
+    How How Many Cups of Water Have You Drank Today? <%= f.number_field :water_intake%>
     <br>
     When Was You Last Meal?<%= f.time_field :time_of_last_meal %> || What Did You Eat?  <%= f.text_field :what_did_you_eat %>
     <br>
@@ -37,6 +38,8 @@
 
     <%= f.submit "Submit" %>
  <% end %>
+
+ <form>
 
 
 

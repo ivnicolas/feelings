@@ -1,4 +1,4 @@
-<header> The Feelings App. </header>
+
 <h4 class="center">GIVING YOU THE POWER TO IDENTIFY YOUR EMOTIONS AND UNCOVER PATTERNS THAT SHAPE YOUR OVERALL WELLBEING</h4>
 
 <br>
@@ -7,21 +7,23 @@
 
 <h4 class = "flash"><%= flash[:message] if !!flash[:message] %></h4>
 <br>
-
-<form class="center"> 
+<div class="form">
+<form class="login"> 
 <%= form_for :user do |f| %>
-    <%= f.label :email, "Enter Your Email" %>
-    <%= f.email_field :email , placeholder: "Email" %>
+    <%= f.label :email, "Enter Your Email"%>
+    <%= f.email_field :email , placeholder: "Email"  , class: 'input' %>
     <br><br>
-    <%= f.label :password, "Enter Your Password" %>
-    <%= f.password_field :password , placeholder: "Password" %>
+    <%= f.label :password, "Enter Your Password"  %>
+    <%= f.password_field :password , placeholder: "Password" , class: 'input'%>
     <br>
-    <%= f.submit "Submit" %>
+   
+    <%= f.submit "Submit" , class: 'input button'%>
     <br>
     <h4> OR </h4>
-    <%= button_to "Log In With Google", '/auth/google_oauth2' %>
+    <%= button_to "Log In With Google", '/auth/google_oauth2' , class: 'input button-2'%>
+  
 <% end %>
 <br>
-
+</div>
 </form>
 

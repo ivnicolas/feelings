@@ -14,6 +14,77 @@
  *= require_self
  */
 
+.input{
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fcfcfc;
+    width: 100%;
+    border: 0;
+    padding: 10px 10px;
+    margin: 15px -10px;
+  }
+
+.footer{
+text-align: center;
+}
+.header{
+    text-align: center;
+}
+
+.form{
+display: block;
+text-align: center;
+}
+.button{
+cursor: pointer;
+color: black;
+font-size: 12px;
+width: 30%;
+border: 0;
+margin-top: 10px;
+margin-left: 35%;
+border-radius: 5px;
+background-color: #eeebe2; 
+/* background-color: #16302b; */
+/* background-color: #4E5340; */
+}
+
+.button-2{
+cursor: pointer;
+color: white;
+font-size: 12px;
+width: 30%;
+border: 0;
+margin-top: 10px;
+margin-left: 35%;
+border-radius: 5px;
+background-color: #3D0B37;
+}
+
+.login {
+display: inline-block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+overflow: hidden;
+background-color:  #d8dde0;
+padding: 40px 30px 30px 30px;
+border-radius: 10px;
+/* margin-left: 33%; */
+/* margin-right: %; */
+/* position: absolute; */
+top: 50%;
+left: 50%;
+width: 400px;
+}
+.login br {
+content: "";
+display: block;
+font-size: 200%;
+}
+  
+
 body {
     font-family: 'Tenor Sans', sans-serif;
     /* font-family: 'Abel', sans-serif; */
@@ -40,6 +111,8 @@ header{
     align-items: center;
     text-align: center;
 }
+
+
  .field_with_errors { display: inline; }
  .errors { color: crimson;}
  .flash { color: crimson;}

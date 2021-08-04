@@ -13,20 +13,25 @@
   </head>
 
   <body>
-    <div>
+    <div class="header">
+    <header> The Feelings App. </header>
+    <br>
     <% if logged_in? %>
+
       <%=link_to "Homepage", homepage_path %> |
       <%=link_to "Edit Profile", edit_user_path(current_user) %> |
       <%=link_to "Feelings Log", user_user_feelings_path(current_user) %> |
       <%=link_to "Feelings Dictionary", feelings_path %> |
       <%=link_to "How's Everybody Doing", forecast_path %> |
-      <%=link_to "Logout", logout_path, method: "delete" %> |
+      <%=link_to "Logout", logout_path, method: "delete" %> 
     <% end %>
     </div>
     <%= yield %>
     <% if !logged_in? %>
-    <br> <br>
+    <br>
+    <div class="footer">
     <%= link_to "Sign Up Here" , signup_path %>
+    </div>
     <% end %>
   </body>
 </html>
